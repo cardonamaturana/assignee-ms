@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: assignee-ms
+  #TODO: ENVIRONMENT VARIABLES
+  data:
+    mongodb:
+      uri: mongodb://admin:root123@localhost:27017/assignee-develop?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui/index.html
+  api:
+    docs:
+      path: /swagger-doc/v3/api-docs
+      groups:
+        enable: true

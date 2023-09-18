@@ -1,9 +1,9 @@
 package com.cardonamaturana.assigneems.infrastructure.repository.employee;
 
-import com.cardonamaturana.assigneems.domain.entity.Assignee;
 import com.cardonamaturana.assigneems.domain.entity.Company;
 import com.cardonamaturana.assigneems.infrastructure.repository.AssigneeDto;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,8 +12,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
-@Getter
-@Setter
+@Data
 @SuperBuilder
 @Document
 public class EmployeeDto extends AssigneeDto {

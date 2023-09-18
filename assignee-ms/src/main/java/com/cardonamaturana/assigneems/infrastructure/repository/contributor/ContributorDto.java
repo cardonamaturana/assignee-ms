@@ -17,8 +17,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class ContributorDto extends EmployeeDto {
 
-  @Id
-  private String id;
   private String serviceDescription;
   private Date serviceEndDate;
   private Long totalServicePayment;

@@ -67,3 +67,9 @@ iassignee-ms/src/main/java/com/cardonamaturana/assigneems/domain/service/assigne
 qassignee-ms/src/main/java/com/cardonamaturana/assigneems/infrastructure/adaters/assignee/AssigneeSaveAdapter.java,9\0\90495d5a4b8ab64170a4e98afe289d3e6e9ccd2f
 ž
 nassignee-ms/src/main/java/com/cardonamaturana/assigneems/application/pragmatico/PragmaticoSaveApplication.java,6\f\6fa7b47ed25f87972b87be60cf399d3cdd46d108
+“
+cassignee-ms/src/main/java/com/cardonamaturana/assigneems/infrastructure/repository/AssigneeDto.java,2\0\20da0a498a219d2098b7b3429fbe89a02ac937e9
+D
+assignee-ms/mvnw.cmd,8\6\86b6932a072beb47c90924dbbe9497b754e81505
+“
+cassignee-ms/src/main/java/com/cardonamaturana/assigneems/config/swagger/ApiDocumentationConfig.java,5\f\5fda27503a7e7705b4d014a1f281fc7f7a245e74

@@ -6,7 +6,7 @@ import com.cardonamaturana.assigneems.infrastructure.api.dto.request.pragmatico.
 import com.cardonamaturana.assigneems.infrastructure.api.dto.response.pragmatico.PragmaticoResponse;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface PragmaticoRequestMapper {
 
   Pragmatico toEntity(PragmaticoRequest pragmaticoRequest);
