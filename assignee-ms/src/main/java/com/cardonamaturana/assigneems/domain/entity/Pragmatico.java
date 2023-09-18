@@ -1,16 +1,14 @@
 package com.cardonamaturana.assigneems.domain.entity;
 
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
+@SuperBuilder
 @ToString(callSuper = true)
 public class Pragmatico extends Employee {
 
@@ -18,5 +16,6 @@ public class Pragmatico extends Employee {
   private String jobTittle;
   private String workEmail;
   private Long salary;
+  //TODO: REFACTOR FORM PRAGMATICO TO PRAMATIC
 
 }
