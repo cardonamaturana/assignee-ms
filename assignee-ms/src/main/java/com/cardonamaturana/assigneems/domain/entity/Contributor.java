@@ -11,7 +11,6 @@ import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
-@SuperBuilder
 @ToString(callSuper = true)
 public class Contributor extends Employee {
 
@@ -20,4 +19,24 @@ public class Contributor extends Employee {
   private Long totalServicePayment;
   private String currency;
 
+  public Contributor(){
+
+  }
+  public Contributor(String serviceDescription, Date serviceEndDate, Long totalServicePayment,
+      String currency) {
+    this.serviceDescription = serviceDescription;
+    this.serviceEndDate = serviceEndDate;
+    this.totalServicePayment = totalServicePayment;
+    this.currency = currency;
+  }
+
+  public Contributor(String fullName, String documentType, String documentNumber,
+      String personalEmail, Company company, String serviceDescription, Date serviceEndDate,
+      Long totalServicePayment, String currency) {
+    super(fullName, documentType, documentNumber, personalEmail, company);
+    this.serviceDescription = serviceDescription;
+    this.serviceEndDate = serviceEndDate;
+    this.totalServicePayment = totalServicePayment;
+    this.currency = currency;
+  }
 }

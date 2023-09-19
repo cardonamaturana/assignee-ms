@@ -1,25 +1,28 @@
 package com.cardonamaturana.assigneems.infrastructure.repository.company;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@SuperBuilder
 @Getter
 @Setter
 @Document
 public class CompanyDto {
 
-    @Id
-    private String id;
-    private String name;
-    private String nit;
-    private String location;
+  @Id
+  private String id;
+  private String name;
+  private String nit;
+  private String location;
 
+  public CompanyDto() {
+  }
 
+  public CompanyDto(String id, String name, String nit, String location) {
+    this.id = id;
+    this.name = name;
+    this.nit = nit;
+    this.location = location;
+  }
 }

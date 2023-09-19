@@ -5,7 +5,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-09-18T00:49:23-0500",
+    date = "2023-09-18T16:11:23-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.6 (Oracle Corporation)"
 )
 public class BranchMapperImpl implements BranchMapper {
@@ -16,13 +16,13 @@ public class BranchMapperImpl implements BranchMapper {
             return null;
         }
 
-        Branch.BranchBuilder<?, ?> branch = Branch.builder();
+        Branch branch = new Branch();
 
-        branch.name( branchDto.getName() );
-        branch.city( branchDto.getCity() );
-        branch.address( branchDto.getAddress() );
+        branch.setName( branchDto.getName() );
+        branch.setCity( branchDto.getCity() );
+        branch.setAddress( branchDto.getAddress() );
 
-        return branch.build();
+        return branch;
     }
 
     @Override
@@ -31,12 +31,12 @@ public class BranchMapperImpl implements BranchMapper {
             return null;
         }
 
-        BranchDto.BranchDtoBuilder<?, ?> branchDto = BranchDto.builder();
+        BranchDto branchDto = new BranchDto();
 
-        branchDto.name( branch.getName() );
-        branchDto.city( branch.getCity() );
-        branchDto.address( branch.getAddress() );
+        branchDto.setName( branch.getName() );
+        branchDto.setCity( branch.getCity() );
+        branchDto.setAddress( branch.getAddress() );
 
-        return branchDto.build();
+        return branchDto;
     }
 }

@@ -73,3 +73,7 @@ D
 assignee-ms/mvnw.cmd,8\6\86b6932a072beb47c90924dbbe9497b754e81505
 “
 cassignee-ms/src/main/java/com/cardonamaturana/assigneems/config/swagger/ApiDocumentationConfig.java,5\f\5fda27503a7e7705b4d014a1f281fc7f7a245e74
+¥
+uassignee-ms/src/main/java/com/cardonamaturana/assigneems/infrastructure/api/dto/request/assignee/AssigneeRequest.java,b\7\b72f239e189fc765ca203501fb1bef62c169cbc7
+¥
+uassignee-ms/src/main/java/com/cardonamaturana/assigneems/infrastructure/api/dto/request/employee/EmployeeRequest.java,6\9\69ea094da23e7d63dab5af77d5ce81c161aa4842

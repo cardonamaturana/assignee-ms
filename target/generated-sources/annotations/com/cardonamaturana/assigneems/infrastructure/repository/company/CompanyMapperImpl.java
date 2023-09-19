@@ -5,7 +5,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-09-18T00:49:22-0500",
+    date = "2023-09-18T16:11:23-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.6 (Oracle Corporation)"
 )
 public class CompanyMapperImpl implements CompanyMapper {
@@ -16,13 +16,13 @@ public class CompanyMapperImpl implements CompanyMapper {
             return null;
         }
 
-        Company.CompanyBuilder<?, ?> company = Company.builder();
+        Company company = new Company();
 
-        company.name( companyDto.getName() );
-        company.nit( companyDto.getNit() );
-        company.location( companyDto.getLocation() );
+        company.setName( companyDto.getName() );
+        company.setNit( companyDto.getNit() );
+        company.setLocation( companyDto.getLocation() );
 
-        return company.build();
+        return company;
     }
 
     @Override
@@ -31,12 +31,12 @@ public class CompanyMapperImpl implements CompanyMapper {
             return null;
         }
 
-        CompanyDto.CompanyDtoBuilder<?, ?> companyDto = CompanyDto.builder();
+        CompanyDto companyDto = new CompanyDto();
 
-        companyDto.name( company.getName() );
-        companyDto.nit( company.getNit() );
-        companyDto.location( company.getLocation() );
+        companyDto.setName( company.getName() );
+        companyDto.setNit( company.getNit() );
+        companyDto.setLocation( company.getLocation() );
 
-        return companyDto.build();
+        return companyDto;
     }
 }

@@ -13,7 +13,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Data
-@SuperBuilder
 @Document
 public class EmployeeDto extends AssigneeDto {
 
@@ -25,4 +24,16 @@ public class EmployeeDto extends AssigneeDto {
   private String personalEmail;
   private Company company;
 
+  public EmployeeDto() {
+  }
+
+  public EmployeeDto(String id, String fullName, String documentType, String documentNumber,
+      String personalEmail, Company company) {
+    this.id = id;
+    this.fullName = fullName;
+    this.documentType = documentType;
+    this.documentNumber = documentNumber;
+    this.personalEmail = personalEmail;
+    this.company = company;
+  }
 }
