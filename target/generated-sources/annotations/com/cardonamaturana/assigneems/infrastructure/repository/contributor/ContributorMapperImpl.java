@@ -1,12 +1,14 @@
 package com.cardonamaturana.assigneems.infrastructure.repository.contributor;
 
+import com.cardonamaturana.assigneems.domain.entity.Company;
 import com.cardonamaturana.assigneems.domain.entity.Contributor;
+import com.cardonamaturana.assigneems.infrastructure.repository.company.CompanyDto;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-09-19T21:04:15-0500",
+    date = "2023-09-20T00:05:51-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.6 (Oracle Corporation)"
 )
 @Component
@@ -24,7 +26,7 @@ public class ContributorMapperImpl implements ContributorMapper {
         contributor.setDocumentType( contributorDto.getDocumentType() );
         contributor.setDocumentNumber( contributorDto.getDocumentNumber() );
         contributor.setPersonalEmail( contributorDto.getPersonalEmail() );
-        contributor.setCompany( contributorDto.getCompany() );
+        contributor.setCompany( companyDtoToCompany( contributorDto.getCompany() ) );
         contributor.setServiceDescription( contributorDto.getServiceDescription() );
         contributor.setServiceEndDate( contributorDto.getServiceEndDate() );
         contributor.setTotalServicePayment( contributorDto.getTotalServicePayment() );
@@ -45,12 +47,40 @@ public class ContributorMapperImpl implements ContributorMapper {
         contributorDto.setDocumentType( contributor.getDocumentType() );
         contributorDto.setDocumentNumber( contributor.getDocumentNumber() );
         contributorDto.setPersonalEmail( contributor.getPersonalEmail() );
-        contributorDto.setCompany( contributor.getCompany() );
+        contributorDto.setCompany( companyToCompanyDto( contributor.getCompany() ) );
         contributorDto.setServiceDescription( contributor.getServiceDescription() );
         contributorDto.setServiceEndDate( contributor.getServiceEndDate() );
         contributorDto.setTotalServicePayment( contributor.getTotalServicePayment() );
         contributorDto.setCurrency( contributor.getCurrency() );
 
         return contributorDto;
+    }
+
+    protected Company companyDtoToCompany(CompanyDto companyDto) {
+        if ( companyDto == null ) {
+            return null;
+        }
+
+        Company company = new Company();
+
+        company.setName( companyDto.getName() );
+        company.setNit( companyDto.getNit() );
+        company.setLocation( companyDto.getLocation() );
+
+        return company;
+    }
+
+    protected CompanyDto companyToCompanyDto(Company company) {
+        if ( company == null ) {
+            return null;
+        }
+
+        CompanyDto companyDto = new CompanyDto();
+
+        companyDto.setName( company.getName() );
+        companyDto.setNit( company.getNit() );
+        companyDto.setLocation( company.getLocation() );
+
+        return companyDto;
     }
 }

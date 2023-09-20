@@ -1,7 +1,7 @@
 package com.cardonamaturana.assigneems.infrastructure.repository.pragmatico;
 
 
-import com.cardonamaturana.assigneems.domain.entity.Company;
+import com.cardonamaturana.assigneems.infrastructure.repository.company.CompanyDto;
 import com.cardonamaturana.assigneems.infrastructure.repository.employee.EmployeeDto;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
+@Document("assignee")
 public class PragmaticoDto extends EmployeeDto {
 
   private String contractType;
@@ -17,9 +18,10 @@ public class PragmaticoDto extends EmployeeDto {
   private String workEmail;
   private Long salary;
 
-  public PragmaticoDto(){
+  public PragmaticoDto() {
 
   }
+
   public PragmaticoDto(String contractType, String jobTittle, String workEmail, Long salary) {
     this.contractType = contractType;
     this.jobTittle = jobTittle;
@@ -28,7 +30,7 @@ public class PragmaticoDto extends EmployeeDto {
   }
 
   public PragmaticoDto(String id, String fullName, String documentType, String documentNumber,
-      String personalEmail, Company company,
+      String personalEmail, CompanyDto company,
       String contractType, String jobTittle, String workEmail, Long salary) {
     super(id, fullName, documentType, documentNumber, personalEmail, company);
     this.contractType = contractType;

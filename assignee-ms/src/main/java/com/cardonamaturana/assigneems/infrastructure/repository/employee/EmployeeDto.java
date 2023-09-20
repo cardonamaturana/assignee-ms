@@ -2,6 +2,7 @@ package com.cardonamaturana.assigneems.infrastructure.repository.employee;
 
 import com.cardonamaturana.assigneems.domain.entity.Company;
 import com.cardonamaturana.assigneems.infrastructure.repository.AssigneeDto;
+import com.cardonamaturana.assigneems.infrastructure.repository.company.CompanyDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -13,6 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Data
+@Document("assignee")
 public class EmployeeDto extends AssigneeDto {
 
   @Id
@@ -21,13 +23,13 @@ public class EmployeeDto extends AssigneeDto {
   private String documentType;
   private String documentNumber;
   private String personalEmail;
-  private Company company;
+  private CompanyDto company;
 
   public EmployeeDto() {
   }
 
   public EmployeeDto(String id, String fullName, String documentType, String documentNumber,
-      String personalEmail, Company company) {
+      String personalEmail, CompanyDto company) {
     this.id = id;
     this.fullName = fullName;
     this.documentType = documentType;

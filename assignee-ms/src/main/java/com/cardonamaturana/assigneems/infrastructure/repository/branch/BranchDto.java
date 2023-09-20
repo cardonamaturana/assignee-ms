@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
+@Document("assignee")
 public class BranchDto extends AssigneeDto {
 
   @Id
