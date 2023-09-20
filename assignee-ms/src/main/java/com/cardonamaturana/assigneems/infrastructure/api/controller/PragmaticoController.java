@@ -3,8 +3,10 @@ package com.cardonamaturana.assigneems.infrastructure.api.controller;
 import com.cardonamaturana.assigneems.application.pragmatico.PragmaticoSaveApplication;
 import com.cardonamaturana.assigneems.infrastructure.api.dto.request.pragmatico.PragmaticoRequest;
 import com.cardonamaturana.assigneems.infrastructure.api.dto.response.pragmatico.PragmaticoResponse;
-import com.cardonamaturana.assigneems.infrastructure.api.mapper.PragmaticoRequestMapper;
-import com.cardonamaturana.assigneems.infrastructure.api.mapper.PragmaticoResponseMapper;
+import com.cardonamaturana.assigneems.infrastructure.api.mapper.pragmatico.PragmaticoRequestMapper;
+import com.cardonamaturana.assigneems.infrastructure.api.mapper.pragmatico.PragmaticoResponseMapper;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +26,9 @@ public class PragmaticoController {
   private final PragmaticoResponseMapper pragmaticoResponseMapper;
 
   @PostMapping()
+  @Operation(summary = "Create Pragmatic Responsible", description = "Create a new pragmatic into database", responses = {
+      @ApiResponse(responseCode = "200", description = "create successful"),
+      @ApiResponse(responseCode = "400", description = "error in any field of JSON request")})
   public Mono<ResponseEntity<PragmaticoResponse>> savePragmatico(
       @RequestBody PragmaticoRequest pragmaticoRequest) {
     return pragmaticoSaveApplication.save(pragmaticoRequestMapper.toEntity(pragmaticoRequest))

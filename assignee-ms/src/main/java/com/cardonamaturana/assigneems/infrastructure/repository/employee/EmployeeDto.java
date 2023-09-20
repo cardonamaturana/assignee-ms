@@ -13,7 +13,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Data
-@Document
 public class EmployeeDto extends AssigneeDto {
 
   @Id

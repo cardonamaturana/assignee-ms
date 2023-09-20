@@ -1,6 +1,4 @@
 
-›
-kassignee-ms/src/main/java/com/cardonamaturana/assigneems/domain/service/assignee/AssigneeGetAllService.java,2\1\21d3c98a0e609756d2d54d9da039b873d6f2db78
 C
 assignee-ms/pom.xml,c\9\c960f4843c452d167ecd0786edb2634c979c1056
  
@@ -61,10 +59,6 @@ passignee-ms/src/main/java/com/cardonamaturana/assigneems/infrastructure/api/map
 uassignee-ms/src/main/java/com/cardonamaturana/assigneems/infrastructure/adaters/pragmatico/PragmaticoSaveAdapter.java,0\c\0ca2ebb58b33d88bca9e655b59f9aa312eeb693f
  
 passignee-ms/src/main/java/com/cardonamaturana/assigneems/infrastructure/api/controller/PragmaticoController.java,1\e\1ef1008f5bccc5c5cfb84acdf652fb6c170a964b
-™
-iassignee-ms/src/main/java/com/cardonamaturana/assigneems/domain/service/assignee/AssigneeSaveService.java,0\4\04e533a405d6dee2a75f574f3f0b9273f92c233b
-¡
-qassignee-ms/src/main/java/com/cardonamaturana/assigneems/infrastructure/adaters/assignee/AssigneeSaveAdapter.java,9\0\90495d5a4b8ab64170a4e98afe289d3e6e9ccd2f
 ž
 nassignee-ms/src/main/java/com/cardonamaturana/assigneems/application/pragmatico/PragmaticoSaveApplication.java,6\f\6fa7b47ed25f87972b87be60cf399d3cdd46d108
 “

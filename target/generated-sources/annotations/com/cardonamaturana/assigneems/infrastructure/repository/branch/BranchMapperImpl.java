@@ -2,12 +2,14 @@ package com.cardonamaturana.assigneems.infrastructure.repository.branch;
 
 import com.cardonamaturana.assigneems.domain.entity.Branch;
 import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-09-18T16:11:23-0500",
+    date = "2023-09-19T21:04:16-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.6 (Oracle Corporation)"
 )
+@Component
 public class BranchMapperImpl implements BranchMapper {
 
     @Override
