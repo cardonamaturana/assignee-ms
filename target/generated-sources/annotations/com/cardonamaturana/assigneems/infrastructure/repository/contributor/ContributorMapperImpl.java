@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-09-21T13:02:17-0500",
+    date = "2023-09-21T18:17:55-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.6 (Oracle Corporation)"
 )
 @Component
@@ -22,6 +22,7 @@ public class ContributorMapperImpl implements ContributorMapper {
 
         Contributor contributor = new Contributor();
 
+        contributor.setId( contributorDto.getId() );
         contributor.setFullName( contributorDto.getFullName() );
         contributor.setDocumentType( contributorDto.getDocumentType() );
         contributor.setDocumentNumber( contributorDto.getDocumentNumber() );
@@ -43,6 +44,7 @@ public class ContributorMapperImpl implements ContributorMapper {
 
         ContributorDto contributorDto = new ContributorDto();
 
+        contributorDto.setId( contributor.getId() );
         contributorDto.setFullName( contributor.getFullName() );
         contributorDto.setDocumentType( contributor.getDocumentType() );
         contributorDto.setDocumentNumber( contributor.getDocumentNumber() );

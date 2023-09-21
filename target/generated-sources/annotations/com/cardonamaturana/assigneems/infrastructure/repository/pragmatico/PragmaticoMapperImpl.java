@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-09-21T13:02:17-0500",
+    date = "2023-09-21T18:17:55-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.6 (Oracle Corporation)"
 )
 @Component
@@ -22,6 +22,7 @@ public class PragmaticoMapperImpl implements PragmaticoMapper {
 
         Pragmatico pragmatico = new Pragmatico();
 
+        pragmatico.setId( pragmaticoDto.getId() );
         pragmatico.setFullName( pragmaticoDto.getFullName() );
         pragmatico.setDocumentType( pragmaticoDto.getDocumentType() );
         pragmatico.setDocumentNumber( pragmaticoDto.getDocumentNumber() );
@@ -43,6 +44,7 @@ public class PragmaticoMapperImpl implements PragmaticoMapper {
 
         PragmaticoDto pragmaticoDto = new PragmaticoDto();
 
+        pragmaticoDto.setId( pragmatico.getId() );
         pragmaticoDto.setFullName( pragmatico.getFullName() );
         pragmaticoDto.setDocumentType( pragmatico.getDocumentType() );
         pragmaticoDto.setDocumentNumber( pragmatico.getDocumentNumber() );

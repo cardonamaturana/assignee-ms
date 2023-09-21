@@ -27,4 +27,14 @@ public class Employee extends Assignee {
     this.personalEmail = personalEmail;
     this.company = company;
   }
+
+  public Employee(String id, String fullName, String documentType, String documentNumber,
+      String personalEmail, Company company) {
+    super(id);
+    this.fullName = fullName;
+    this.documentType = documentType;
+    this.documentNumber = documentNumber;
+    this.personalEmail = personalEmail;
+    this.company = company;
+  }
 }

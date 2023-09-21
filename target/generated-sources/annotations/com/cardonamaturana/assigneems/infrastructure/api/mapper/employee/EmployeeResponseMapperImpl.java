@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-09-21T13:02:17-0500",
+    date = "2023-09-21T18:17:55-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.6 (Oracle Corporation)"
 )
 @Component
@@ -21,6 +21,7 @@ public class EmployeeResponseMapperImpl implements EmployeeResponseMapper {
 
         EmployeeResponse employeeResponse = new EmployeeResponse();
 
+        employeeResponse.setId( employee.getId() );
         employeeResponse.setFullName( employee.getFullName() );
         employeeResponse.setDocumentType( employee.getDocumentType() );
         employeeResponse.setDocumentNumber( employee.getDocumentNumber() );

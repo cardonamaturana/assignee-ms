@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-09-21T13:02:17-0500",
+    date = "2023-09-21T18:17:55-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.6 (Oracle Corporation)"
 )
 @Component
@@ -20,6 +20,7 @@ public class BranchMapperImpl implements BranchMapper {
 
         Branch branch = new Branch();
 
+        branch.setId( branchDto.getId() );
         branch.setName( branchDto.getName() );
         branch.setCity( branchDto.getCity() );
         branch.setAddress( branchDto.getAddress() );
@@ -35,6 +36,7 @@ public class BranchMapperImpl implements BranchMapper {
 
         BranchDto branchDto = new BranchDto();
 
+        branchDto.setId( branch.getId() );
         branchDto.setName( branch.getName() );
         branchDto.setCity( branch.getCity() );
         branchDto.setAddress( branch.getAddress() );

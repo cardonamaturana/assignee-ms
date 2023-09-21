@@ -17,10 +17,10 @@ public class Company {
 
   public Company() {
   }
+
   public Company(String name, String nit, String location) {
     this.name = name;
     this.nit = nit;
     this.location = location;
   }
-
 }

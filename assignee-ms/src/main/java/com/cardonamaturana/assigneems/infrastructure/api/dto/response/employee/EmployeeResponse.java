@@ -30,14 +30,14 @@ public class EmployeeResponse extends AssigneeResponse {
     this.company = company;
   }
 
-  @Override
-  public String toString() {
-    return "EmployeeResponse{" +
-        "fullName='" + fullName + '\'' +
-        ", documentType='" + documentType + '\'' +
-        ", documentNumber='" + documentNumber + '\'' +
-        ", personalEmail='" + personalEmail + '\'' +
-        ", company=" + company +
-        '}';
+  public EmployeeResponse(String id, String fullName, String documentType, String documentNumber,
+      String personalEmail, Company company) {
+    super(id);
+    this.fullName = fullName;
+    this.documentType = documentType;
+    this.documentNumber = documentNumber;
+    this.personalEmail = personalEmail;
+    this.company = company;
   }
+
 }

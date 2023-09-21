@@ -23,4 +23,11 @@ public class Branch extends Assignee {
     this.city = city;
     this.address = address;
   }
+
+  public Branch(String id, String name, String city, String address) {
+    super(id);
+    this.name = name;
+    this.city = city;
+    this.address = address;
+  }
 }

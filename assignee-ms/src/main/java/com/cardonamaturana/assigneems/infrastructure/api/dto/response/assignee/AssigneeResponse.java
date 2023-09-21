@@ -3,9 +3,9 @@ package com.cardonamaturana.assigneems.infrastructure.api.dto.response.assignee;
 import lombok.Data;
 
 @Data
-public class AssigneeResponse {
+public abstract class AssigneeResponse {
 
-  private String id;
+  protected String id;
 
   public AssigneeResponse() {
   }

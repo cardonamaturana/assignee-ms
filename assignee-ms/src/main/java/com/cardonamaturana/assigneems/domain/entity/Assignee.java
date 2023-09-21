@@ -1,9 +1,12 @@
 package com.cardonamaturana.assigneems.domain.entity;
 
 
+import lombok.Data;
+
+@Data
 public abstract class Assignee {
 
-  private String id;
+  protected String id;
   public Assignee() {
 
   }

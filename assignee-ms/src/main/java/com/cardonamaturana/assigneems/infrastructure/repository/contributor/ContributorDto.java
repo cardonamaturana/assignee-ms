@@ -3,13 +3,10 @@ package com.cardonamaturana.assigneems.infrastructure.repository.contributor;
 import com.cardonamaturana.assigneems.infrastructure.repository.company.CompanyDto;
 import com.cardonamaturana.assigneems.infrastructure.repository.employee.EmployeeDto;
 import java.util.Date;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Getter
-@Setter
-@Document()
+@Data
 public class ContributorDto extends EmployeeDto {
 
   private String serviceDescription;

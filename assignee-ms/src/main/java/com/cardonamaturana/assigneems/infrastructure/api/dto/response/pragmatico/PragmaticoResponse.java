@@ -30,22 +30,24 @@ public class PragmaticoResponse extends EmployeeResponse {
 
   public PragmaticoResponse(String fullName, String documentType, String documentNumber,
       String personalEmail, Company company, String contractType, String jobTittle,
-      String workEmail, Long salary) {
+      String workEmail,
+      Long salary) {
     super(fullName, documentType, documentNumber, personalEmail, company);
-
     this.contractType = contractType;
     this.jobTittle = jobTittle;
     this.workEmail = workEmail;
     this.salary = salary;
   }
 
-  @Override
-  public String toString() {
-    return "PragmaticoResponse{" +
-        "contractType='" + contractType + '\'' +
-        ", jobTittle='" + jobTittle + '\'' +
-        ", workEmail='" + workEmail + '\'' +
-        ", salary=" + salary +
-        '}';
+  public PragmaticoResponse(String id, String fullName, String documentType, String documentNumber,
+      String personalEmail, Company company, String contractType, String jobTittle,
+      String workEmail,
+      Long salary) {
+    super(id, fullName, documentType, documentNumber, personalEmail, company);
+    this.contractType = contractType;
+    this.jobTittle = jobTittle;
+    this.workEmail = workEmail;
+    this.salary = salary;
   }
+
 }

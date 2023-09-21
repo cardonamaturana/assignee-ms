@@ -37,4 +37,14 @@ public class Contributor extends Employee {
     this.totalServicePayment = totalServicePayment;
     this.currency = currency;
   }
+
+  public Contributor(String id, String fullName, String documentType, String documentNumber,
+      String personalEmail, Company company, String serviceDescription, Date serviceEndDate,
+      Long totalServicePayment, String currency) {
+    super(id, fullName, documentType, documentNumber, personalEmail, company);
+    this.serviceDescription = serviceDescription;
+    this.serviceEndDate = serviceEndDate;
+    this.totalServicePayment = totalServicePayment;
+    this.currency = currency;
+  }
 }

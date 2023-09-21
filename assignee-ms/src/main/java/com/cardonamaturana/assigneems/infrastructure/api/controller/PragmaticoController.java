@@ -41,13 +41,4 @@ public class PragmaticoController {
             HttpStatus.CREATED).body(pragmaticoResponseMapper.toDto(saved)));
   }
 
-  @GetMapping()
-  @Operation(summary = "Get all pragmaticos", description = "Obtain all register for pragmatico", responses = {
-      @ApiResponse(responseCode = "200", description = "obtained successfully"),
-      @ApiResponse(responseCode = "500", description = "error in response")})
-  @ResponseStatus(HttpStatus.OK)
-  public Flux<PragmaticoResponse> getAllAssignee() {
-    return pragmaticoGetAllApplication.getAll().map(pragmaticoResponseMapper::toDto);
-  }
-
 }

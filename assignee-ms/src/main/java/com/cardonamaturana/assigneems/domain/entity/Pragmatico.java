@@ -20,6 +20,7 @@ public class Pragmatico extends Employee {
 
   }
 
+
   public Pragmatico(String contractType, String jobTittle, String workEmail, Long salary) {
     this.contractType = contractType;
     this.jobTittle = jobTittle;
@@ -37,4 +38,14 @@ public class Pragmatico extends Employee {
     this.salary = salary;
   }
 
+  public Pragmatico(String id, String fullName, String documentType, String documentNumber,
+      String personalEmail, Company company, String contractType, String jobTittle,
+      String workEmail,
+      Long salary) {
+    super(id, fullName, documentType, documentNumber, personalEmail, company);
+    this.contractType = contractType;
+    this.jobTittle = jobTittle;
+    this.workEmail = workEmail;
+    this.salary = salary;
+  }
 }
