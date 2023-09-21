@@ -1,8 +1,17 @@
 package com.cardonamaturana.assigneems.infrastructure.api.dto.response.assignee;
 
-public abstract class AssigneeResponse {
+import lombok.Data;
+
+@Data
+public class AssigneeResponse {
+
+  private String id;
 
   public AssigneeResponse() {
+  }
+
+  public AssigneeResponse(String id) {
+    this.id = id;
   }
 
   @Override

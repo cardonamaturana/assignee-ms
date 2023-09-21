@@ -14,9 +14,10 @@ public class Branch extends Assignee {
   private String city;
   private String address;
 
-  public Branch(){
+  public Branch() {
 
   }
+
   public Branch(String name, String city, String address) {
     this.name = name;
     this.city = city;

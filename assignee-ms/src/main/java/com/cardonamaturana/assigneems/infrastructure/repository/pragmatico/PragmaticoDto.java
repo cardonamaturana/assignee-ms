@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
-@Document("assignee")
+@Document()
 public class PragmaticoDto extends EmployeeDto {
 
   private String contractType;

@@ -16,9 +16,10 @@ public class Pragmatico extends Employee {
   private Long salary;
   //TODO: REFACTOR FORM PRAGMATICO TO PRAMATIC
 
-  public Pragmatico(){
+  public Pragmatico() {
 
   }
+
   public Pragmatico(String contractType, String jobTittle, String workEmail, Long salary) {
     this.contractType = contractType;
     this.jobTittle = jobTittle;

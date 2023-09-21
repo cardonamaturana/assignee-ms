@@ -1,6 +1,5 @@
 package com.cardonamaturana.assigneems.infrastructure.repository.contributor;
 
-import com.cardonamaturana.assigneems.domain.entity.Company;
 import com.cardonamaturana.assigneems.infrastructure.repository.company.CompanyDto;
 import com.cardonamaturana.assigneems.infrastructure.repository.employee.EmployeeDto;
 import java.util.Date;
@@ -10,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
-@Document("assignee")
+@Document()
 public class ContributorDto extends EmployeeDto {
 
   private String serviceDescription;

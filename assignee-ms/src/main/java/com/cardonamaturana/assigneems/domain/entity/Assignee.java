@@ -8,4 +8,7 @@ public abstract class Assignee {
 
   }
 
+  public Assignee(String id) {
+    this.id = id;
+  }
 }

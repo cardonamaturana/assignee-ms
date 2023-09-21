@@ -1,12 +1,9 @@
 package com.cardonamaturana.assigneems.domain.entity;
 
 import java.util.Date;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 
 
 @Getter
@@ -19,9 +16,10 @@ public class Contributor extends Employee {
   private Long totalServicePayment;
   private String currency;
 
-  public Contributor(){
+  public Contributor() {
 
   }
+
   public Contributor(String serviceDescription, Date serviceEndDate, Long totalServicePayment,
       String currency) {
     this.serviceDescription = serviceDescription;
