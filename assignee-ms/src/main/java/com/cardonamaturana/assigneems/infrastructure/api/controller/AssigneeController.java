@@ -1,7 +1,6 @@
 package com.cardonamaturana.assigneems.infrastructure.api.controller;
 
 import com.cardonamaturana.assigneems.application.assignee.AssigneeGetAllApplication;
-import com.cardonamaturana.assigneems.application.pragmatico.PragmaticoGetAllApplication;
 import com.cardonamaturana.assigneems.infrastructure.api.dto.response.assignee.AssigneeResponse;
 import com.cardonamaturana.assigneems.infrastructure.api.mapper.assignee.AssigneeResponseMapper;
 import com.cardonamaturana.assigneems.infrastructure.api.mapper.pragmatico.PragmaticoResponseMapper;
@@ -23,7 +22,6 @@ public class AssigneeController {
 
   private final AssigneeGetAllApplication assigneeGetAllApplication;
   private final AssigneeResponseMapper assigneeResponseMapper;
-  private final PragmaticoGetAllApplication pragmaticoGetAllApplication;
   private final PragmaticoResponseMapper pragmaticoResponseMapper;
 
 
@@ -33,8 +31,6 @@ public class AssigneeController {
       @ApiResponse(responseCode = "500", description = "error in response")})
   @ResponseStatus(HttpStatus.OK)
   public Flux<AssigneeResponse> getAllAssignee() {
-    Flux<AssigneeResponse> combinedFlux = Flux.merge(
-        pragmaticoGetAllApplication.getAll().map(pragmaticoResponseMapper::toDto));
     return assigneeGetAllApplication.getAll().map(assigneeResponseMapper::toDto);
   }
 
