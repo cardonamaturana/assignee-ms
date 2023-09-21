@@ -1,15 +1,8 @@
 package com.cardonamaturana.assigneems.infrastructure.repository.employee;
 
-import com.cardonamaturana.assigneems.domain.entity.Company;
-import com.cardonamaturana.assigneems.infrastructure.repository.AssigneeDto;
+import com.cardonamaturana.assigneems.infrastructure.repository.assignee.AssigneeDto;
 import com.cardonamaturana.assigneems.infrastructure.repository.company.CompanyDto;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.experimental.SuperBuilder;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
@@ -17,8 +10,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document("assignee")
 public class EmployeeDto extends AssigneeDto {
 
-  @Id
-  private String id;
   private String fullName;
   private String documentType;
   private String documentNumber;
@@ -28,9 +19,18 @@ public class EmployeeDto extends AssigneeDto {
   public EmployeeDto() {
   }
 
+  public EmployeeDto(String fullName, String documentType, String documentNumber,
+      String personalEmail, CompanyDto company) {
+    this.fullName = fullName;
+    this.documentType = documentType;
+    this.documentNumber = documentNumber;
+    this.personalEmail = personalEmail;
+    this.company = company;
+  }
+
   public EmployeeDto(String id, String fullName, String documentType, String documentNumber,
       String personalEmail, CompanyDto company) {
-    this.id = id;
+    super(id);
     this.fullName = fullName;
     this.documentType = documentType;
     this.documentNumber = documentNumber;

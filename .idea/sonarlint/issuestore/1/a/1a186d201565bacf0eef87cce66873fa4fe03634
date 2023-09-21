@@ -1,0 +1,6 @@
+
+b	java:S107>"AConstructor has 9 parameters, which is greater than 7 authorized.(£Şîÿùÿÿÿÿ8¥éˆ‚«1
+n
+java:S1128"QRemove this unused import 'com.cardonamaturana.assigneems.domain.entity.Company'.(·¢»¶8§éˆ‚«1
+e
+java:S1128"CRemove this unused import 'jakarta.validation.constraints.NotNull'.(Àª•ıÿÿÿÿ8‰ªŒ‚«1
