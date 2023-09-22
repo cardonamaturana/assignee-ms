@@ -15,7 +15,7 @@ public class AssigneeUpdateApplication {
   private final AssigneeProcess assigneeProcess;
 
   public Mono<Assignee> update(Assignee assignee) {
-    return assigneeProcess.validateForUpdate(assignee.getId())
+    return assigneeProcess.validateForUpdate(assignee)
         .then(assigneeSaveService.save(assignee));
   }
 
