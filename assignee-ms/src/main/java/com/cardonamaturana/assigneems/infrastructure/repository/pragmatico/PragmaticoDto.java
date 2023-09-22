@@ -4,10 +4,12 @@ package com.cardonamaturana.assigneems.infrastructure.repository.pragmatico;
 import com.cardonamaturana.assigneems.infrastructure.repository.company.CompanyDto;
 import com.cardonamaturana.assigneems.infrastructure.repository.employee.EmployeeDto;
 import lombok.Data;
+import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Data
+@TypeAlias("PragmaticoDto")
 public class PragmaticoDto extends EmployeeDto {
 
   private String contractType;

@@ -3,10 +3,12 @@ package com.cardonamaturana.assigneems.infrastructure.repository.employee;
 import com.cardonamaturana.assigneems.infrastructure.repository.assignee.AssigneeDto;
 import com.cardonamaturana.assigneems.infrastructure.repository.company.CompanyDto;
 import lombok.Data;
+import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Data
+@TypeAlias("EmployeeDto")
 public class EmployeeDto extends AssigneeDto {
 
   private String fullName;

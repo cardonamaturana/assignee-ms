@@ -3,6 +3,7 @@ package com.cardonamaturana.assigneems.infrastructure.api.dto.request.employee;
 import com.cardonamaturana.assigneems.domain.entity.Company;
 import com.cardonamaturana.assigneems.infrastructure.api.dto.request.assignee.AssigneeRequest;
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -38,10 +39,11 @@ public class EmployeeRequest extends AssigneeRequest {
 
 
   @Schema(name = "personalEmail",
-      description = "correo electrónico personal: Campo opcional",
+      description = "correo electrónico personal : Campo obligatorio",
       accessMode = Schema.AccessMode.READ_WRITE,
       example = "cardona.maturana@gmail.com",
       type = "text")
+  @NotBlank(message = "correo electrónico personal : Dato obligatorio")
   private String personalEmail;
 
 

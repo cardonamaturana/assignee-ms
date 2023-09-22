@@ -4,9 +4,11 @@ import com.cardonamaturana.assigneems.infrastructure.repository.company.CompanyD
 import com.cardonamaturana.assigneems.infrastructure.repository.employee.EmployeeDto;
 import java.util.Date;
 import lombok.Data;
+import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
+@TypeAlias("ContributorDto")
 public class ContributorDto extends EmployeeDto {
 
   private String serviceDescription;

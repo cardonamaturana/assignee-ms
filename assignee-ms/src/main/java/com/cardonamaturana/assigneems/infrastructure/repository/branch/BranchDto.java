@@ -2,10 +2,12 @@ package com.cardonamaturana.assigneems.infrastructure.repository.branch;
 
 import com.cardonamaturana.assigneems.infrastructure.repository.assignee.AssigneeDto;
 import lombok.Data;
+import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Data
+@TypeAlias("BranchDto")
 public class BranchDto extends AssigneeDto {
 
   private String name;
