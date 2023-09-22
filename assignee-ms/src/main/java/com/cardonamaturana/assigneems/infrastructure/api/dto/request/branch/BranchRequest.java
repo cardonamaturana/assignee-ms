@@ -15,7 +15,7 @@ public class BranchRequest extends AssigneeRequest {
   @Schema(name = "name",
       description = "nombre de la sede : Campo opcional",
       accessMode = Schema.AccessMode.READ_WRITE,
-      example = "Sede el mirador de las flores",
+      example = "Sede el mirador de las flores - branch",
       type = "text")
   private String name;
 
@@ -40,6 +40,13 @@ public class BranchRequest extends AssigneeRequest {
   }
 
   public BranchRequest(String name, String city, String address) {
+    this.name = name;
+    this.city = city;
+    this.address = address;
+  }
+
+  public BranchRequest(String id, String name, String city, String address) {
+    super(id);
     this.name = name;
     this.city = city;
     this.address = address;

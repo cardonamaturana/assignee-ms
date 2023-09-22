@@ -119,3 +119,7 @@ lassignee-ms/src/main/java/com/cardonamaturana/assigneems/application/assignee/A
 nassignee-ms/src/main/java/com/cardonamaturana/assigneems/infrastructure/api/controller/AssigneeController.java,1\7\176e23e8f26c4f8739ff12060aae07af33360fbc
 Ÿ
 oassignee-ms/src/main/java/com/cardonamaturana/assigneems/infrastructure/repository/assignee/AssigneeMapper.java,0\3\03cf26c419104112e733e8d0cb72f5fa2e1331da
+§
+wassignee-ms/src/main/java/com/cardonamaturana/assigneems/infrastructure/api/mapper/assignee/AssigneeResponseMapper.java,8\e\8ee28090b444ac4929635df68c281872e06d7217
+Ÿ
+oassignee-ms/src/main/java/com/cardonamaturana/assigneems/domain/service/contributor/ContributorSaveService.java,d\5\d57c02a6c76c8448fc11253e208c83d60f927178

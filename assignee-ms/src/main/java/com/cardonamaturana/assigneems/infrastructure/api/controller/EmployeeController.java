@@ -1,6 +1,7 @@
 package com.cardonamaturana.assigneems.infrastructure.api.controller;
 
-import com.cardonamaturana.assigneems.application.employee.EmployeeSaveApplication;
+import com.cardonamaturana.assigneems.application.assignee.AssigneeSaveApplication;
+import com.cardonamaturana.assigneems.domain.entity.Employee;
 import com.cardonamaturana.assigneems.infrastructure.api.dto.request.employee.EmployeeRequest;
 import com.cardonamaturana.assigneems.infrastructure.api.dto.response.employee.EmployeeResponse;
 import com.cardonamaturana.assigneems.infrastructure.api.mapper.employee.EmployeeRequestMapper;
@@ -21,7 +22,7 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class EmployeeController {
 
-  private final EmployeeSaveApplication employeeSaveApplication;
+  private final AssigneeSaveApplication assigneeSaveApplication;
   private final EmployeeRequestMapper employeeRequestMapper;
   private final EmployeeResponseMapper employeeResponseMapper;
 
@@ -31,9 +32,9 @@ public class EmployeeController {
       @ApiResponse(responseCode = "400", description = "error in any field of JSON request")})
   public Mono<ResponseEntity<EmployeeResponse>> saveEmployee(
       @RequestBody EmployeeRequest employeeRequest) {
-    return employeeSaveApplication.save(employeeRequestMapper.toEntity(employeeRequest))
+    return assigneeSaveApplication.save(employeeRequestMapper.toEntity(employeeRequest))
         .map(saved -> ResponseEntity.status(
-            HttpStatus.CREATED).body(employeeResponseMapper.toDto(saved)));
+            HttpStatus.CREATED).body(employeeResponseMapper.toDto((Employee) saved)));
   }
 
 }

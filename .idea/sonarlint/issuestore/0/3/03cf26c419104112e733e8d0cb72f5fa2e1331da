@@ -1,0 +1,25 @@
+
+Z
+java:S1854"=Remove this useless assignment to local variable "assignDto".(¬Åƒº8ã¶ˆÉ«1
+_
+java:S1854!"=Remove this useless assignment to local variable "assignDto".(¬†¹ûÿÿÿÿ8Ú²†É«1
+_
+java:S1854&"=Remove this useless assignment to local variable "assignDto".(†©ªşÿÿÿÿ8Ú²†É«1
+c
+java:S6201"FReplace this instanceof check and cast with 'instanceof Branch branch'(ãÕºŒ8‚„ŠÉ«1
+g
+java:S6201 "JReplace this instanceof check and cast with 'instanceof Employee employee'(éÎ•8ïİ“É«1
+p
+java:S6201%"NReplace this instanceof check and cast with 'instanceof Pragmatico pragmatico'(‘•Éâıÿÿÿÿ8İî–É«1
+W
+java:S18541":Remove this useless assignment to local variable "assign".(³¾¸Ë8Ú²†É«1
+\
+java:S18546":Remove this useless assignment to local variable "assign".(®Ø»éıÿÿÿÿ8Ùö‘É«1
+W
+java:S1854;":Remove this useless assignment to local variable "assign".(¢şãå8†–É«1
+n
+java:S62010"LReplace this instanceof check and cast with 'instanceof BranchDto branchdto'(ÿÆÉùÿÿÿÿ8ÃÄ€É«1
+m
+java:S62015"PReplace this instanceof check and cast with 'instanceof EmployeeDto employeedto'(·èš„8¨‚É«1
+q
+java:S6201:"TReplace this instanceof check and cast with 'instanceof PragmaticoDto pragmaticodto'(˜¤ñ8÷èûÈ«1

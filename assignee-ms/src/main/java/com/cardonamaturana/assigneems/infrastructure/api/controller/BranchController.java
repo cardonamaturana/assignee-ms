@@ -1,6 +1,7 @@
 package com.cardonamaturana.assigneems.infrastructure.api.controller;
 
-import com.cardonamaturana.assigneems.application.branch.BranchSaveApplication;
+import com.cardonamaturana.assigneems.application.assignee.AssigneeSaveApplication;
+import com.cardonamaturana.assigneems.domain.entity.Branch;
 import com.cardonamaturana.assigneems.infrastructure.api.dto.request.branch.BranchRequest;
 import com.cardonamaturana.assigneems.infrastructure.api.dto.response.branch.BranchResponse;
 import com.cardonamaturana.assigneems.infrastructure.api.mapper.branch.BranchRequestMapper;
@@ -21,7 +22,7 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class BranchController {
 
-  private final BranchSaveApplication branchSaveApplication;
+  private final AssigneeSaveApplication assigneeSaveApplication;
   private final BranchRequestMapper branchRequestMapper;
   private final BranchResponseMapper branchResponseMapper;
 
@@ -31,9 +32,9 @@ public class BranchController {
       @ApiResponse(responseCode = "400", description = "error in any field of JSON request")})
   public Mono<ResponseEntity<BranchResponse>> saveBranch(
       @RequestBody BranchRequest branchRequest) {
-    return branchSaveApplication.save(branchRequestMapper.toEntity(branchRequest))
+    return assigneeSaveApplication.save(branchRequestMapper.toEntity(branchRequest))
         .map(saved -> ResponseEntity.status(
-            HttpStatus.CREATED).body(branchResponseMapper.toDto(saved)));
+            HttpStatus.CREATED).body(branchResponseMapper.toDto((Branch) saved)));
   }
 
 }

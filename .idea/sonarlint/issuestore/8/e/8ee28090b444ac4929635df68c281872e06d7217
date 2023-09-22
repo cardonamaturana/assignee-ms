@@ -1,0 +1,13 @@
+
+_
+java:S1854"BRemove this useless assignment to local variable "assignResponse".(èÎ±¸8½®›Ğ«1
+d
+java:S1854!"BRemove this useless assignment to local variable "assignResponse".(¶É«éÿÿÿÿÿ8‚ÏĞ«1
+d
+java:S1854&"BRemove this useless assignment to local variable "assignResponse".(•À¬ãıÿÿÿÿ8ŒŞŸĞ«1
+c
+java:S6201"FReplace this instanceof check and cast with 'instanceof Branch branch'(ãÕºŒ8¿®›Ğ«1
+g
+java:S6201 "JReplace this instanceof check and cast with 'instanceof Employee employee'(éÎ•8«’Ğ«1
+p
+java:S6201%"NReplace this instanceof check and cast with 'instanceof Pragmatico pragmatico'(‘•Éâıÿÿÿÿ8–¡ŸĞ«1

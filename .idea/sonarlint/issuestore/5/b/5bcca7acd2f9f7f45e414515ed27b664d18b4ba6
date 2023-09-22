@@ -1,8 +1,3 @@
 
-b	java:S107!"AConstructor has 9 parameters, which is greater than 7 authorized.(‘ÆÄúÿÿÿÿ8¯šŒîª1
-X
-java:S1128"6Remove this unused import 'lombok.AllArgsConstructor'.(´œ¾öùÿÿÿÿ8µšŒîª1
-R
-java:S1128"5Remove this unused import 'lombok.NoArgsConstructor'.(¸¨›8¶šŒîª1
-Z
-java:S1128	"=Remove this unused import 'lombok.experimental.SuperBuilder'.(àçÄÑ8¶šŒîª1
+b	java:S107"AConstructor has 9 parameters, which is greater than 7 authorized.(‘ÆÄúÿÿÿÿ8ãÍ‘È«1
+^	java:S107)"BConstructor has 10 parameters, which is greater than 7 authorized.(–†˜Ì8äÍ‘È«1

@@ -1,52 +1,36 @@
 package com.cardonamaturana.assigneems.infrastructure.api.mapper.pragmatico;
 
-import com.cardonamaturana.assigneems.domain.entity.Company;
 import com.cardonamaturana.assigneems.domain.entity.Pragmatico;
-import com.cardonamaturana.assigneems.infrastructure.api.dto.request.company.CompanyRequest;
-import com.cardonamaturana.assigneems.infrastructure.api.dto.request.pragmatico.PragmaticoRequest;
+import com.cardonamaturana.assigneems.infrastructure.api.dto.request.pragmatico.PragmaticoSaveRequest;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-09-21T18:17:55-0500",
+    date = "2023-09-21T22:38:07-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.6 (Oracle Corporation)"
 )
 @Component
 public class PragmaticoRequestMapperImpl implements PragmaticoRequestMapper {
 
     @Override
-    public Pragmatico toEntity(PragmaticoRequest pragmaticoRequest) {
-        if ( pragmaticoRequest == null ) {
+    public Pragmatico toEntity(PragmaticoSaveRequest pragmaticoSaveRequest) {
+        if ( pragmaticoSaveRequest == null ) {
             return null;
         }
 
         Pragmatico pragmatico = new Pragmatico();
 
-        pragmatico.setFullName( pragmaticoRequest.getFullName() );
-        pragmatico.setDocumentType( pragmaticoRequest.getDocumentType() );
-        pragmatico.setDocumentNumber( pragmaticoRequest.getDocumentNumber() );
-        pragmatico.setPersonalEmail( pragmaticoRequest.getPersonalEmail() );
-        pragmatico.setCompany( companyRequestToCompany( pragmaticoRequest.getCompany() ) );
-        pragmatico.setContractType( pragmaticoRequest.getContractType() );
-        pragmatico.setJobTittle( pragmaticoRequest.getJobTittle() );
-        pragmatico.setWorkEmail( pragmaticoRequest.getWorkEmail() );
-        pragmatico.setSalary( pragmaticoRequest.getSalary() );
+        pragmatico.setFullName( pragmaticoSaveRequest.getFullName() );
+        pragmatico.setDocumentType( pragmaticoSaveRequest.getDocumentType() );
+        pragmatico.setDocumentNumber( pragmaticoSaveRequest.getDocumentNumber() );
+        pragmatico.setPersonalEmail( pragmaticoSaveRequest.getPersonalEmail() );
+        pragmatico.setCompany( pragmaticoSaveRequest.getCompany() );
+        pragmatico.setContractType( pragmaticoSaveRequest.getContractType() );
+        pragmatico.setJobTittle( pragmaticoSaveRequest.getJobTittle() );
+        pragmatico.setWorkEmail( pragmaticoSaveRequest.getWorkEmail() );
+        pragmatico.setSalary( pragmaticoSaveRequest.getSalary() );
 
         return pragmatico;
-    }
-
-    protected Company companyRequestToCompany(CompanyRequest companyRequest) {
-        if ( companyRequest == null ) {
-            return null;
-        }
-
-        Company company = new Company();
-
-        company.setName( companyRequest.getName() );
-        company.setNit( companyRequest.getNit() );
-        company.setLocation( companyRequest.getLocation() );
-
-        return company;
     }
 }

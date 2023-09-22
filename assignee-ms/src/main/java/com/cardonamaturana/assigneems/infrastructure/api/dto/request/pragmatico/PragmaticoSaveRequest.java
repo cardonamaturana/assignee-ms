@@ -1,18 +1,16 @@
 package com.cardonamaturana.assigneems.infrastructure.api.dto.request.pragmatico;
 
 import com.cardonamaturana.assigneems.domain.entity.Company;
-import com.cardonamaturana.assigneems.infrastructure.api.dto.request.company.CompanyRequest;
 import com.cardonamaturana.assigneems.infrastructure.api.dto.request.employee.EmployeeRequest;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
 @JsonTypeName("pragmaticoRequest")
 @Getter
 @Setter
-public class PragmaticoRequest extends EmployeeRequest {
+public class PragmaticoSaveRequest extends EmployeeRequest {
 
 
   @Schema(name = "contractType",
@@ -31,7 +29,6 @@ public class PragmaticoRequest extends EmployeeRequest {
   private String jobTittle;
 
 
-
   @Schema(name = "workEmail",
       description = "correo electronico que tiene con dominio de la empresa : Campo opcional",
       accessMode = Schema.AccessMode.READ_WRITE,
@@ -47,11 +44,11 @@ public class PragmaticoRequest extends EmployeeRequest {
       type = "number")
   private Long salary;
 
-  public PragmaticoRequest(){
+  public PragmaticoSaveRequest() {
 
   }
 
-  public PragmaticoRequest( String contractType, String jobTittle, String workEmail,
+  public PragmaticoSaveRequest(String contractType, String jobTittle, String workEmail,
       Long salary) {
     this.contractType = contractType;
     this.jobTittle = jobTittle;
@@ -59,8 +56,8 @@ public class PragmaticoRequest extends EmployeeRequest {
     this.salary = salary;
   }
 
-  public PragmaticoRequest(String fullName, String documentType, String documentNumber,
-      String personalEmail, CompanyRequest company, String contractType, String jobTittle,
+  public PragmaticoSaveRequest(String fullName, String documentType, String documentNumber,
+      String personalEmail, Company company, String contractType, String jobTittle,
       String workEmail, Long salary) {
     super(fullName, documentType, documentNumber, personalEmail, company);
 
