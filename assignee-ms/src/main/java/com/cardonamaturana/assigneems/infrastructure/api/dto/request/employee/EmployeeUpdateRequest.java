@@ -12,7 +12,17 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class EmployeeRequest extends AssigneeRequest {
+public class EmployeeUpdateRequest extends AssigneeRequest {
+
+
+  @Schema(name = "employeeId",
+      description = "id del empleado a actualizar : Campo obligatorio",
+      accessMode = Schema.AccessMode.READ_WRITE,
+      example = "8679d644-5f85-4be0-ba3c-6b97523d32d6",
+      type = "text - Unique identifier format")
+  @NotBlank(message = "id del empleado a actualizar : Campo obligatorio")
+  private String employeeId;
+
 
   @Schema(name = "fullName",
       description = "nombre completo : Campo opcional",
@@ -54,10 +64,10 @@ public class EmployeeRequest extends AssigneeRequest {
   private Company company;
 
 
-  public EmployeeRequest() {
+  public EmployeeUpdateRequest() {
   }
 
-  public EmployeeRequest(String fullName, String documentType, String documentNumber,
+  public EmployeeUpdateRequest(String fullName, String documentType, String documentNumber,
       String personalEmail, Company company) {
     this.fullName = fullName;
     this.documentType = documentType;
@@ -66,7 +76,7 @@ public class EmployeeRequest extends AssigneeRequest {
     this.company = company;
   }
 
-  public EmployeeRequest(String id, String fullName, String documentType, String documentNumber,
+  public EmployeeUpdateRequest(String id, String fullName, String documentType, String documentNumber,
       String personalEmail, Company company) {
     super(id);
     this.fullName = fullName;

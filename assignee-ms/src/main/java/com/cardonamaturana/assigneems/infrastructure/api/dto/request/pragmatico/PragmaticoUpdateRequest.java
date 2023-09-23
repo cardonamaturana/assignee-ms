@@ -4,6 +4,7 @@ import com.cardonamaturana.assigneems.domain.entity.Company;
 import com.cardonamaturana.assigneems.infrastructure.api.dto.request.employee.EmployeeRequest;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotBlank;
 import java.util.UUID;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,12 +14,13 @@ import lombok.Setter;
 @Setter
 public class PragmaticoUpdateRequest extends EmployeeRequest {
 
-  @Schema(name = "assigneeId",
-      description = "id del empleado a actualizar : Campo opcional",
+  @Schema(name = "pragmaticoId",
+      description = "id del pragmatico a actualizar : Campo obligatorio",
       accessMode = Schema.AccessMode.READ_WRITE,
       example = "8679d644-5f85-4be0-ba3c-6b97523d32d6",
       type = "text - Unique identifier format")
-  private String assigneeId;
+  @NotBlank(message = "id del pragmatico a actualizar : Campo obligatorio")
+  private String pragmaticoId;
 
 
 

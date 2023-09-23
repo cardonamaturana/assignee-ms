@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface PragmaticoUpdateRequestMapper {
 
-  @Mapping(target = "id", source = "assigneeId")
+  @Mapping(target = "id", source = "pragmaticoId")
   Pragmatico toEntity(PragmaticoUpdateRequest pragmaticoUpdateRequest);
 
 }

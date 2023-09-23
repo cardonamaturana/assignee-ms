@@ -1,20 +1,18 @@
 package com.cardonamaturana.assigneems.application.assignee;
 
-import com.cardonamaturana.assigneems.domain.entity.Assignee;
-import com.cardonamaturana.assigneems.domain.service.assignee.AssigneeGetByEmailService;
+import com.cardonamaturana.assigneems.domain.service.assignee.AssigneeDeleteByIdService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
 @RequiredArgsConstructor
-public class AssigneeGetByEmailApplication {
+public class AssigneeDeleteByIdApplication {
 
-  private final AssigneeGetByEmailService assigneeGetByEmailService;
+  private final AssigneeDeleteByIdService assigneeDeleteByIdService;
 
-  public Mono<Assignee> get(Mono<String> assigneeEmail) {
-    return assigneeGetByEmailService.get(assigneeEmail);
+  public Mono<Void> delete(Mono<String> id) {
+    return assigneeDeleteByIdService.delete(id);
   }
 
 }

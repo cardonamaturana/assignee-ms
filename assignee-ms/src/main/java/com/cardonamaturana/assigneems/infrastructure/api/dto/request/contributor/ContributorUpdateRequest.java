@@ -3,6 +3,7 @@ package com.cardonamaturana.assigneems.infrastructure.api.dto.request.contributo
 import com.cardonamaturana.assigneems.domain.entity.Company;
 import com.cardonamaturana.assigneems.infrastructure.api.dto.request.employee.EmployeeRequest;
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotBlank;
 import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,7 +13,17 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class ContributorRequest extends EmployeeRequest {
+public class ContributorUpdateRequest extends EmployeeRequest {
+
+
+  @Schema(name = "contributorId",
+      description = "id del colaborador a actualizar : Campo obligatorio",
+      accessMode = Schema.AccessMode.READ_WRITE,
+      example = "8679d644-5f85-4be0-ba3c-6b97523d32d6",
+      type = "text - Unique identifier format")
+  @NotBlank(message = "id del colaborador a actualizar : Campo obligatorio")
+  private String contributorId;
+
 
   @Schema(name = "serviceDescription",
       description = "Descripcion del servicio que presta : Campo opcional",
@@ -44,11 +55,11 @@ public class ContributorRequest extends EmployeeRequest {
       type = "Text")
   private String currency;
 
-  public ContributorRequest() {
+  public ContributorUpdateRequest() {
 
   }
 
-  public ContributorRequest(String serviceDescription, Date serviceEndDate,
+  public ContributorUpdateRequest(String serviceDescription, Date serviceEndDate,
       Long totalServicePayment,
       String currency) {
     this.serviceDescription = serviceDescription;
@@ -57,7 +68,7 @@ public class ContributorRequest extends EmployeeRequest {
     this.currency = currency;
   }
 
-  public ContributorRequest(String fullName, String documentType, String documentNumber,
+  public ContributorUpdateRequest(String fullName, String documentType, String documentNumber,
       String personalEmail, Company company, String serviceDescription, Date serviceEndDate,
       Long totalServicePayment, String currency) {
     super(fullName, documentType, documentNumber, personalEmail, company);
@@ -67,7 +78,7 @@ public class ContributorRequest extends EmployeeRequest {
     this.currency = currency;
   }
 
-  public ContributorRequest(String id, String fullName, String documentType, String documentNumber,
+  public ContributorUpdateRequest(String id, String fullName, String documentType, String documentNumber,
       String personalEmail, Company company, String serviceDescription, Date serviceEndDate,
       Long totalServicePayment, String currency) {
     super(id, fullName, documentType, documentNumber, personalEmail, company);

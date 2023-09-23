@@ -1,10 +1,9 @@
 package com.cardonamaturana.assigneems.domain.service.assignee;
 
-import com.cardonamaturana.assigneems.domain.entity.Assignee;
 import reactor.core.publisher.Mono;
 
-public interface AssigneeGetByIdService {
+public interface AssigneeDeleteByIdService {
 
-  Mono<Assignee> get(Mono<String> id);
+  Mono<Void> delete(Mono<String> id);
 
 }
