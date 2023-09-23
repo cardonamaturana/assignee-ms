@@ -58,9 +58,9 @@ public class ContributorRequest extends EmployeeRequest {
   }
 
   public ContributorRequest(String fullName, String documentType, String documentNumber,
-      String personalEmail, Company company, String serviceDescription, Date serviceEndDate,
+      String personalEmail, String companyId, String serviceDescription, Date serviceEndDate,
       Long totalServicePayment, String currency) {
-    super(fullName, documentType, documentNumber, personalEmail, company);
+    super(fullName, documentType, documentNumber, personalEmail, companyId);
     this.serviceDescription = serviceDescription;
     this.serviceEndDate = serviceEndDate;
     this.totalServicePayment = totalServicePayment;
@@ -68,9 +68,9 @@ public class ContributorRequest extends EmployeeRequest {
   }
 
   public ContributorRequest(String id, String fullName, String documentType, String documentNumber,
-      String personalEmail, Company company, String serviceDescription, Date serviceEndDate,
+      String personalEmail, String companyId, String serviceDescription, Date serviceEndDate,
       Long totalServicePayment, String currency) {
-    super(id, fullName, documentType, documentNumber, personalEmail, company);
+    super(id, fullName, documentType, documentNumber, personalEmail, companyId);
     this.serviceDescription = serviceDescription;
     this.serviceEndDate = serviceEndDate;
     this.totalServicePayment = totalServicePayment;

@@ -4,10 +4,10 @@ import com.cardonamaturana.assigneems.shared.exceptions.base.BaseException;
 import com.cardonamaturana.assigneems.shared.exceptions.base.ExceptionCode;
 import org.springframework.http.HttpStatus;
 
-public class AssigneeNotFoundException extends BaseException {
+public class CompanyNotFoundException extends BaseException {
 
-  public AssigneeNotFoundException() {
-    super(false, HttpStatus.NOT_FOUND, ExceptionCode.ASSIGNEE_NOT_FOUND.getMessage(),
-        ExceptionCode.ASSIGNEE_NOT_FOUND);
+  public CompanyNotFoundException() {
+    super(false, HttpStatus.NOT_FOUND, ExceptionCode.COMPANY_NOT_FOUND.getMessage(),
+        ExceptionCode.COMPANY_NOT_FOUND);
   }
 }

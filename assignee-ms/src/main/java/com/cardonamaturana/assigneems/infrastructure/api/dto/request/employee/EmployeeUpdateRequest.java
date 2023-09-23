@@ -57,32 +57,32 @@ public class EmployeeUpdateRequest extends AssigneeRequest {
   private String personalEmail;
 
 
-  @Schema(name = "company",
-      description = "datos de la empresa: Campos opcionales",
+  @Schema(name = "companyId",
+      description = "id de la empresa: Campos opcionale",
       accessMode = Schema.AccessMode.READ_WRITE,
       type = "text")
-  private Company company;
+  private String companyId;
 
 
   public EmployeeUpdateRequest() {
   }
 
   public EmployeeUpdateRequest(String fullName, String documentType, String documentNumber,
-      String personalEmail, Company company) {
+      String personalEmail, String companyId) {
     this.fullName = fullName;
     this.documentType = documentType;
     this.documentNumber = documentNumber;
     this.personalEmail = personalEmail;
-    this.company = company;
+    this.companyId = companyId;
   }
 
   public EmployeeUpdateRequest(String id, String fullName, String documentType, String documentNumber,
-      String personalEmail, Company company) {
+      String personalEmail, String companyId) {
     super(id);
     this.fullName = fullName;
     this.documentType = documentType;
     this.documentNumber = documentNumber;
     this.personalEmail = personalEmail;
-    this.company = company;
+    this.companyId = companyId;
   }
 }
