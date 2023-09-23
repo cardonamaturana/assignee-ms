@@ -1,10 +1,11 @@
 package com.cardonamaturana.assigneems.domain.service.assignee;
 
 import com.cardonamaturana.assigneems.domain.entity.Assignee;
-import java.util.List;
+import com.cardonamaturana.assigneems.domain.entity.Pragmatico;
+import reactor.core.publisher.Flux;
 
 public interface AssigneeGetAllService {
 
-  List<Assignee> getAllAssignees();
+  Flux<Assignee> getAll();
 
 }

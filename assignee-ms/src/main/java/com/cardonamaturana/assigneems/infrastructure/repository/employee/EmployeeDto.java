@@ -1,29 +1,41 @@
 package com.cardonamaturana.assigneems.infrastructure.repository.employee;
 
-import com.cardonamaturana.assigneems.domain.entity.Assignee;
-import com.cardonamaturana.assigneems.domain.entity.Company;
-import com.cardonamaturana.assigneems.infrastructure.repository.AssigneeDto;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.experimental.SuperBuilder;
-import org.springframework.data.annotation.Id;
+import com.cardonamaturana.assigneems.infrastructure.repository.assignee.AssigneeDto;
+import com.cardonamaturana.assigneems.infrastructure.repository.company.CompanyDto;
+import lombok.Data;
+import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
-@Getter
-@Setter
-@SuperBuilder
-@Document
+@Data
+@TypeAlias("EmployeeDto")
 public class EmployeeDto extends AssigneeDto {
 
-  @Id
-  private String id;
   private String fullName;
   private String documentType;
   private String documentNumber;
   private String personalEmail;
-  private Company company;
+  private CompanyDto company;
 
+  public EmployeeDto() {
+  }
+
+  public EmployeeDto(String fullName, String documentType, String documentNumber,
+      String personalEmail, CompanyDto company) {
+    this.fullName = fullName;
+    this.documentType = documentType;
+    this.documentNumber = documentNumber;
+    this.personalEmail = personalEmail;
+    this.company = company;
+  }
+
+  public EmployeeDto(String id, String fullName, String documentType, String documentNumber,
+      String personalEmail, CompanyDto company) {
+    super(id);
+    this.fullName = fullName;
+    this.documentType = documentType;
+    this.documentNumber = documentNumber;
+    this.personalEmail = personalEmail;
+    this.company = company;
+  }
 }

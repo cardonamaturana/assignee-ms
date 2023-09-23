@@ -1,17 +1,13 @@
 package com.cardonamaturana.assigneems.domain.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 
 
 @Getter
 @Setter
-@SuperBuilder
-@ToString
+@ToString(callSuper = true)
 public class Employee extends Assignee {
 
   private String fullName;
@@ -20,4 +16,25 @@ public class Employee extends Assignee {
   private String personalEmail;
   private Company company;
 
+  public Employee() {
+  }
+
+  public Employee(String fullName, String documentType, String documentNumber, String personalEmail,
+      Company company) {
+    this.fullName = fullName;
+    this.documentType = documentType;
+    this.documentNumber = documentNumber;
+    this.personalEmail = personalEmail;
+    this.company = company;
+  }
+
+  public Employee(String id, String fullName, String documentType, String documentNumber,
+      String personalEmail, Company company) {
+    super(id);
+    this.fullName = fullName;
+    this.documentType = documentType;
+    this.documentNumber = documentNumber;
+    this.personalEmail = personalEmail;
+    this.company = company;
+  }
 }

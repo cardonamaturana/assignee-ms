@@ -1,24 +1,26 @@
 package com.cardonamaturana.assigneems.domain.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
-@SuperBuilder
-@ToString
+@ToString(callSuper = true)
 public class Company {
 
 
-    private String name;
-    private String nit;
-    private String location;
+  private String name;
+  private String nit;
+  private String location;
 
 
+  public Company() {
+  }
+
+  public Company(String name, String nit, String location) {
+    this.name = name;
+    this.nit = nit;
+    this.location = location;
+  }
 }
