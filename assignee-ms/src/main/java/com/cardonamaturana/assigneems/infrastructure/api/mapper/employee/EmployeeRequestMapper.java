@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface EmployeeRequestMapper {
 
-
+  @Mapping(source = "companyId", target = "company.id")
   Employee toEntity(EmployeeRequest employeeRequest);
 
 }
