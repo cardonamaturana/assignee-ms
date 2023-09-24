@@ -25,6 +25,10 @@ public class AssigneeProcess {
     return isEmployee(assignee).then(addCompany(assignee));
   }
 
+  public Mono<Assignee> processForGetAll(Assignee assignee){
+    return addCompany(assignee);
+  }
+
   private Mono<Boolean> isEmployee(Assignee assignee) {
     return Mono.just(assignee instanceof Employee);
   }
