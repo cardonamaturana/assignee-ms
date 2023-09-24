@@ -2,10 +2,13 @@ package com.cardonamaturana.assigneems.infrastructure.api.controller;
 
 import com.cardonamaturana.assigneems.application.assignee.AssigneeSaveApplication;
 import com.cardonamaturana.assigneems.application.assignee.AssigneeUpdateApplication;
+import com.cardonamaturana.assigneems.application.branch.BranchGetAllApplication;
 import com.cardonamaturana.assigneems.domain.entity.Branch;
 import com.cardonamaturana.assigneems.infrastructure.api.dto.request.branch.BranchRequest;
 import com.cardonamaturana.assigneems.infrastructure.api.dto.request.branch.BranchUpdateRequest;
+import com.cardonamaturana.assigneems.infrastructure.api.dto.response.assignee.AssigneeResponse;
 import com.cardonamaturana.assigneems.infrastructure.api.dto.response.branch.BranchResponse;
+import com.cardonamaturana.assigneems.infrastructure.api.mapper.assignee.AssigneeResponseMapper;
 import com.cardonamaturana.assigneems.infrastructure.api.mapper.branch.BranchRequestMapper;
 import com.cardonamaturana.assigneems.infrastructure.api.mapper.branch.BranchResponseMapper;
 import com.cardonamaturana.assigneems.infrastructure.api.mapper.branch.BranchUpdateRequestMapper;
@@ -14,11 +17,14 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -28,9 +34,22 @@ public class BranchController {
 
   private final AssigneeSaveApplication assigneeSaveApplication;
   private final AssigneeUpdateApplication assigneeUpdateApplication;
+  private final BranchGetAllApplication branchGetAllApplication;
   private final BranchRequestMapper branchRequestMapper;
   private final BranchUpdateRequestMapper branchUpdateRequestMapper;
   private final BranchResponseMapper branchResponseMapper;
+  private final AssigneeResponseMapper assigneeResponseMapper;
+
+
+  @GetMapping()
+  @Operation(summary = "Get all branch", description = "Obtain all register for branch", responses = {
+      @ApiResponse(responseCode = "200", description = "obtained successfully"),
+      @ApiResponse(responseCode = "500", description = "error in response")})
+  @ResponseStatus(HttpStatus.OK)
+  public Flux<AssigneeResponse> getAllBranch() {
+    return branchGetAllApplication.getAll().map(assigneeResponseMapper::toDto);
+  }
+
 
   @PostMapping()
   @Operation(summary = "Create Branch", description = "Create a new branch into database", responses = {

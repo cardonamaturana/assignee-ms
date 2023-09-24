@@ -1,4 +1,4 @@
-package com.cardonamaturana.assigneems.application.assignee;
+package com.cardonamaturana.assigneems.application.employee;
 
 import com.cardonamaturana.assigneems.application.assignee.process.AssigneeProcess;
 import com.cardonamaturana.assigneems.domain.entity.Assignee;
@@ -9,20 +9,21 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
 @Service
-public class AssigneeGetAllApplication {
+public class EmployeeGetAllApplication {
 
-  private final AssigneeGetAllService assigneeGetAllService;
+  @Qualifier("employee")
+  private final AssigneeGetAllService employeeGetAllService;
   private final AssigneeProcess assigneeProcess;
 
   public Flux<Assignee> getAll() {
-    return assigneeGetAllService.getAll()
-        .flatMap(result -> assigneeProcess.processForGetAll(result));
+    return employeeGetAllService.getAll()
+        .flatMap(employee -> assigneeProcess.processForGetAll(employee));
   }
 
 
-  public AssigneeGetAllApplication(@Qualifier("assignee") AssigneeGetAllService assigneeGetAllService,
+  public EmployeeGetAllApplication(@Qualifier("employee")AssigneeGetAllService employeeGetAllService,
       AssigneeProcess assigneeProcess) {
-    this.assigneeGetAllService = assigneeGetAllService;
+    this.employeeGetAllService = employeeGetAllService;
     this.assigneeProcess = assigneeProcess;
   }
 }

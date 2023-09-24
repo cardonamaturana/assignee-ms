@@ -5,10 +5,10 @@ import com.cardonamaturana.assigneems.domain.service.assignee.AssigneeSaveServic
 import com.cardonamaturana.assigneems.infrastructure.repository.assignee.AssigneeMapper;
 import com.cardonamaturana.assigneems.infrastructure.repository.assignee.AssigneeRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
-@Repository
+@Service
 @RequiredArgsConstructor
 public class AssigneeSaveAdapter implements AssigneeSaveService {
 

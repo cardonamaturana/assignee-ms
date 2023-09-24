@@ -3,10 +3,10 @@ package com.cardonamaturana.assigneems.infrastructure.adaters.assignee;
 import com.cardonamaturana.assigneems.domain.service.assignee.AssigneeIsExistByIdService;
 import com.cardonamaturana.assigneems.infrastructure.repository.assignee.AssigneeRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
-@Repository
+@Service
 @RequiredArgsConstructor
 public class AssigneeIsExistByIdAdapter implements AssigneeIsExistByIdService {
 

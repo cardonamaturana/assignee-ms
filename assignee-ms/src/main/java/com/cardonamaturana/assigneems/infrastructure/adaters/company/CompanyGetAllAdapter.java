@@ -5,10 +5,10 @@ import com.cardonamaturana.assigneems.domain.service.company.CompanyGetAllServic
 import com.cardonamaturana.assigneems.infrastructure.repository.company.CompanyMapper;
 import com.cardonamaturana.assigneems.infrastructure.repository.company.CompanyRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
-@Repository
+@Service
 @RequiredArgsConstructor
 public class CompanyGetAllAdapter implements CompanyGetAllService {
 
