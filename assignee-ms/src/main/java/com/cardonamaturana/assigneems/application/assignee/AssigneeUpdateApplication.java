@@ -16,7 +16,7 @@ public class AssigneeUpdateApplication {
 
   public Mono<Assignee> update(Assignee assignee) {
     return assigneeProcess.processForUpdate(assignee)
-        .then(assigneeSaveService.save(assignee));
+        .flatMap(processed -> assigneeSaveService.save(processed));
   }
 
 }

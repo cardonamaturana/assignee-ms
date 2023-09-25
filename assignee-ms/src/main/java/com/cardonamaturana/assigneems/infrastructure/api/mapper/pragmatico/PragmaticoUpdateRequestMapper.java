@@ -9,6 +9,7 @@ import org.mapstruct.Mapping;
 public interface PragmaticoUpdateRequestMapper {
 
   @Mapping(target = "id", source = "pragmaticoId")
+  @Mapping(source = "companyId", target = "company.id")
   Pragmatico toEntity(PragmaticoUpdateRequest pragmaticoUpdateRequest);
 
 }
