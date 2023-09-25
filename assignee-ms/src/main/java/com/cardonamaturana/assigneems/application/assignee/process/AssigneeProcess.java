@@ -6,9 +6,9 @@ import com.cardonamaturana.assigneems.domain.entity.Employee;
 import com.cardonamaturana.assigneems.domain.service.assignee.AssigneeGetByIdService;
 import com.cardonamaturana.assigneems.domain.service.company.CompanyGetByIdService;
 import com.cardonamaturana.assigneems.domain.service.company.CompanyIsExistByIdService;
+import com.cardonamaturana.assigneems.shared.exceptions.base.assignee.AssigneeNotFoundException;
 import com.cardonamaturana.assigneems.shared.exceptions.base.assignee.CompanyNotFoundException;
 import com.cardonamaturana.assigneems.shared.exceptions.base.assignee.EntityTypeMismatchException;
-import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
@@ -25,7 +25,7 @@ public class AssigneeProcess {
     return isEmployee(assignee).then(addCompany(assignee));
   }
 
-  public Mono<Assignee> processForGetAll(Assignee assignee){
+  public Mono<Assignee> processForGetAll(Assignee assignee) {
     return addCompany(assignee);
   }
 
@@ -41,12 +41,9 @@ public class AssigneeProcess {
     if (assignee instanceof Employee) {
       return companyGetByIdService.get(Mono.just(((Employee) assignee).getCompany().getId()))
           .flatMap(companyResult -> {
-            if (Objects.nonNull(companyResult)) {
-              ((Employee) assignee).setCompany(companyResult);
-              return Mono.just(assignee);
-            }
-            return Mono.error(new CompanyNotFoundException());
-          });
+            ((Employee) assignee).setCompany(companyResult);
+            return Mono.just(assignee);
+          }).switchIfEmpty(Mono.error(new CompanyNotFoundException()));
     }
     return Mono.just(assignee);
   }
@@ -57,15 +54,7 @@ public class AssigneeProcess {
         return Mono.error(new EntityTypeMismatchException());
       }
       return Mono.empty();
-    });
+    }).switchIfEmpty(Mono.error(new AssigneeNotFoundException())).then();
   }
 
-  private Mono<Void> isExistCompany(String companyId) {
-    return companyIsExistByIdService.isExistById(companyId).flatMap(isExistCompany -> {
-      if (!isExistCompany) {
-        return Mono.error(new CompanyNotFoundException());
-      }
-      return Mono.empty();
-    });
-  }
 }
