@@ -6,6 +6,7 @@ spring:
   #TODO: ENVIRONMENT VARIABLES
   data:
     mongodb:
+      auto-index-creation : true
       uri: mongodb://admin:root123@localhost:27017/assignee-develop?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false
 
 springdoc:

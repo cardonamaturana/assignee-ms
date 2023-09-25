@@ -22,16 +22,17 @@ public class AssigneeProcess {
   private final CompanyIsExistByIdService companyIsExistByIdService;
 
   public Mono<Assignee> processForSave(Assignee assignee) {
-    return isEmployee(assignee).then(addCompany(assignee));
+    return addCompany(assignee);
+  }
+
+  public Mono<Assignee> processForGetAssignee(Assignee assignee) {
+    return addCompany(assignee);
   }
 
   public Mono<Assignee> processForGetAll(Assignee assignee) {
     return addCompany(assignee);
   }
 
-  private Mono<Boolean> isEmployee(Assignee assignee) {
-    return Mono.just(assignee instanceof Employee);
-  }
 
   public Mono<Assignee> processForUpdate(Assignee assignee) {
     return isCorrectInstance(assignee).then(addCompany(assignee));

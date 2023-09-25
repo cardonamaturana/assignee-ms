@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 public interface AssigneeRepository extends ReactiveMongoRepository<AssigneeDto, String> {
 
 
-  @Query("{ 'personalEmail': ?0, '_class': 'EmployeeDto' }")
+  @Query("{ 'personalEmail': ?0, '_class': {'$in': ['EmployeeDto', 'PragmaticoDto', 'ContributorDto'] }}")
   Mono<AssigneeDto> getByEmail(@Param("employeeEmail") Mono<String> employeeEmail);
 
   @Query("{ 'company._id': ?0, '_class': {'$in': ['EmployeeDto', 'PragmaticoDto', 'ContributorDto'] } }")

@@ -4,7 +4,7 @@ import com.cardonamaturana.assigneems.infrastructure.repository.assignee.Assigne
 import com.cardonamaturana.assigneems.infrastructure.repository.company.CompanyDto;
 import lombok.Data;
 import org.springframework.data.annotation.TypeAlias;
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.index.Indexed;
 
 
 @Data
@@ -14,6 +14,7 @@ public class EmployeeDto extends AssigneeDto {
   private String fullName;
   private String documentType;
   private String documentNumber;
+  @Indexed(unique = true)
   private String personalEmail;
   private CompanyDto company;
 
