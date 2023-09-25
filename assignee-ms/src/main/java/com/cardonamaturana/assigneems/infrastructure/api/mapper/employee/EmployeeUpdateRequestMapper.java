@@ -9,6 +9,7 @@ import org.mapstruct.Mapping;
 public interface EmployeeUpdateRequestMapper {
 
   @Mapping(target = "id", source = "employeeId")
+  @Mapping(source = "companyId", target = "company.id")
   Employee toEntity(EmployeeUpdateRequest employeeUpdateRequest);
 
 }

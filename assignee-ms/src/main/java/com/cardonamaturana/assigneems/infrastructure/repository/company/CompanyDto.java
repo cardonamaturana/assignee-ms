@@ -4,6 +4,7 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @Data
 @Document("companies")
@@ -13,16 +14,7 @@ public class CompanyDto {
   @Id
   private String id;
   private String name;
+  private boolean state = true;
   private String nit;
   private String location;
-
-  public CompanyDto() {
-  }
-
-  public CompanyDto(String id, String name, String nit, String location) {
-    this.id = id;
-    this.name = name;
-    this.nit = nit;
-    this.location = location;
-  }
 }

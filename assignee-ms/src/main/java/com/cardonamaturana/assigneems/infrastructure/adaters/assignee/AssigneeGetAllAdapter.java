@@ -5,10 +5,11 @@ import com.cardonamaturana.assigneems.domain.service.assignee.AssigneeGetAllServ
 import com.cardonamaturana.assigneems.infrastructure.repository.assignee.AssigneeMapper;
 import com.cardonamaturana.assigneems.infrastructure.repository.assignee.AssigneeRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
-@Repository
+@Service("assignee")
 @RequiredArgsConstructor
 public class AssigneeGetAllAdapter implements AssigneeGetAllService {
 

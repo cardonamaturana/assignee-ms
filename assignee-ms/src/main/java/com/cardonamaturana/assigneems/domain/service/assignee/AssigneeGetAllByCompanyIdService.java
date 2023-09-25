@@ -1,10 +1,10 @@
 package com.cardonamaturana.assigneems.domain.service.assignee;
 
 import com.cardonamaturana.assigneems.domain.entity.Assignee;
-import reactor.core.publisher.Mono;
+import reactor.core.publisher.Flux;
 
-public interface AssigneeUpdateService {
+public interface AssigneeGetAllByCompanyIdService {
 
-  Mono<Assignee> update(Assignee assignee);
+  Flux<Assignee> getAll(String companyId);
 
 }

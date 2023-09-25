@@ -68,9 +68,9 @@ public class PragmaticoUpdateRequest extends EmployeeRequest {
   }
 
   public PragmaticoUpdateRequest(String fullName, String documentType, String documentNumber,
-      String personalEmail, Company company, String contractType, String jobTittle,
+      String personalEmail, String companyId, String contractType, String jobTittle,
       String workEmail, Long salary) {
-    super(fullName, documentType, documentNumber, personalEmail, company);
+    super(fullName, documentType, documentNumber, personalEmail, companyId);
 
     this.contractType = contractType;
     this.jobTittle = jobTittle;

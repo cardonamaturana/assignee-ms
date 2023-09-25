@@ -9,6 +9,7 @@ import org.mapstruct.Mapping;
 public interface ContributorUpdateRequestMapper {
 
   @Mapping(target = "id", source = "contributorId")
+  @Mapping(source = "companyId", target = "company.id")
   Contributor toEntity(ContributorUpdateRequest contributorUpdateRequest);
 
 }

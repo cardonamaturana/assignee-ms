@@ -1,26 +1,16 @@
 package com.cardonamaturana.assigneems.domain.entity;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
-@Setter
+@Data
 @ToString(callSuper = true)
 public class Company {
 
-
+  private String id;
   private String name;
   private String nit;
   private String location;
-
-
-  public Company() {
-  }
-
-  public Company(String name, String nit, String location) {
-    this.name = name;
-    this.nit = nit;
-    this.location = location;
-  }
 }

@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 public class AssigneeNotFoundException extends BaseException {
 
   public AssigneeNotFoundException() {
-    super(false, HttpStatus.NOT_FOUND, ExceptionCode.ASSIGNEE_NOT_FOUND_EXCEPTION.getMessage(), ExceptionCode.ASSIGNEE_NOT_FOUND_EXCEPTION);
+    super(false, HttpStatus.NOT_FOUND, ExceptionCode.ASSIGNEE_NOT_FOUND.getMessage(),
+        ExceptionCode.ASSIGNEE_NOT_FOUND);
   }
 }

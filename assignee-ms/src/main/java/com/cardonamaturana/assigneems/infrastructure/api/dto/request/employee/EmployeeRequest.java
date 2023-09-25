@@ -1,6 +1,5 @@
 package com.cardonamaturana.assigneems.infrastructure.api.dto.request.employee;
 
-import com.cardonamaturana.assigneems.domain.entity.Company;
 import com.cardonamaturana.assigneems.infrastructure.api.dto.request.assignee.AssigneeRequest;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
@@ -47,32 +46,32 @@ public class EmployeeRequest extends AssigneeRequest {
   private String personalEmail;
 
 
-  @Schema(name = "company",
-      description = "datos de la empresa: Campos opcionales",
+  @Schema(name = "companyId",
+      description = "id de la empresa: Campos opcionales",
       accessMode = Schema.AccessMode.READ_WRITE,
       type = "text")
-  private Company company;
+  private String companyId;
 
 
   public EmployeeRequest() {
   }
 
   public EmployeeRequest(String fullName, String documentType, String documentNumber,
-      String personalEmail, Company company) {
+      String personalEmail, String companyId) {
     this.fullName = fullName;
     this.documentType = documentType;
     this.documentNumber = documentNumber;
     this.personalEmail = personalEmail;
-    this.company = company;
+    this.companyId = companyId;
   }
 
   public EmployeeRequest(String id, String fullName, String documentType, String documentNumber,
-      String personalEmail, Company company) {
+      String personalEmail, String company) {
     super(id);
     this.fullName = fullName;
     this.documentType = documentType;
     this.documentNumber = documentNumber;
     this.personalEmail = personalEmail;
-    this.company = company;
+    this.companyId = companyId;
   }
 }

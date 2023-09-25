@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 public class EntityTypeMismatchException extends BaseException {
 
   public EntityTypeMismatchException() {
-    super(false, HttpStatus.NOT_FOUND, ExceptionCode.ENTITY_TYPE_MISMATCH.getMessage(),
+    super(false, HttpStatus.CONFLICT, ExceptionCode.ENTITY_TYPE_MISMATCH.getMessage(),
         ExceptionCode.ENTITY_TYPE_MISMATCH);
   }
 }

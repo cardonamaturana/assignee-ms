@@ -1,5 +1,6 @@
 package com.cardonamaturana.assigneems.application.assignee;
 
+import com.cardonamaturana.assigneems.application.assignee.process.AssigneeProcess;
 import com.cardonamaturana.assigneems.domain.entity.Assignee;
 import com.cardonamaturana.assigneems.domain.service.assignee.AssigneeSaveService;
 import lombok.RequiredArgsConstructor;
@@ -11,9 +12,10 @@ import reactor.core.publisher.Mono;
 public class AssigneeSaveApplication {
 
   private final AssigneeSaveService assigneeSaveService;
+  private final AssigneeProcess assigneeProcess;
 
   public Mono<Assignee> save(Assignee assignee) {
-    return assigneeSaveService.save(assignee);
+    return assigneeProcess.processForSave(assignee).flatMap(assigneeSaveService::save);
   }
 
 }

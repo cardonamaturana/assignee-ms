@@ -49,7 +49,7 @@ public class AssigneeController {
   }
 
   @DeleteMapping("/{id}")
-  @Operation(summary = "Detele Assignee for identificator", description = "Delete one register of assignee for identificator", responses = {
+  @Operation(summary = "Delete Assignee for identifier", description = "Delete one register of assignee for identificator", responses = {
       @ApiResponse(responseCode = "204", description = "Deleted successfully"),
       @ApiResponse(responseCode = "500", description = "error in request")})
   @ResponseStatus(HttpStatus.NO_CONTENT)
