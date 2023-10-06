@@ -14,7 +14,8 @@ public class EmployeeDto extends AssigneeDto {
   private String fullName;
   private String documentType;
   private String documentNumber;
-  @Indexed(unique = true)
+  //campo único y opcional porque branch no lo tiene
+  @Indexed(unique = true, sparse = true)
   private String personalEmail;
   private CompanyDto company;
 

@@ -13,7 +13,8 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class ContributorResponse extends EmployeeResponse {
+public class
+ContributorResponse extends EmployeeResponse {
 
 
   private String serviceDescription;

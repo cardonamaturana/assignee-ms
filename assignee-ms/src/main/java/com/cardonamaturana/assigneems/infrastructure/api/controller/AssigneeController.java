@@ -1,5 +1,7 @@
 package com.cardonamaturana.assigneems.infrastructure.api.controller;
 
+import static com.cardonamaturana.assigneems.shared.utils.CustomHeaders.X_OBJECT_TYPE;
+
 import com.cardonamaturana.assigneems.application.assignee.AssigneeDeleteByIdApplication;
 import com.cardonamaturana.assigneems.application.assignee.AssigneeGetAllApplication;
 import com.cardonamaturana.assigneems.application.assignee.AssigneeGetByEmailApplication;
@@ -9,7 +11,9 @@ import com.cardonamaturana.assigneems.infrastructure.api.mapper.assignee.Assigne
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,9 +60,14 @@ public class AssigneeController {
       @ApiResponse(responseCode = "200", description = "obtained successfully"),
       @ApiResponse(responseCode = "500", description = "error in response")})
   @ResponseStatus(HttpStatus.OK)
-  public Mono<AssigneeResponse> getAssigneeById(@RequestParam("assigneeId") String assigneId) {
+  public Mono<ResponseEntity<AssigneeResponse>> getAssigneeById(
+      @RequestParam("assigneeId") String assigneId) {
+    HttpHeaders headers = new HttpHeaders();
+    String headerValue = "";
     return assigneeGetByIdApplication.get(Mono.just(assigneId))
-        .map(assigneeResponseMapper::toDto);
+        .map(assigneeResponseMapper::toDto)
+        .doOnNext(result -> headers.set(X_OBJECT_TYPE.getMessage(), result.getClass().getSimpleName()))
+        .map(result -> ResponseEntity.ok().headers(headers).body(result));
   }
 
   @DeleteMapping("/{id}")

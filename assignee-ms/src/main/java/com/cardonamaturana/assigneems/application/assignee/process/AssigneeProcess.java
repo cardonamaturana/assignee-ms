@@ -54,7 +54,7 @@ public class AssigneeProcess {
       if (!result.getClass().equals(assignee.getClass())) {
         return Mono.error(new EntityTypeMismatchException());
       }
-      return Mono.empty();
+      return Mono.just(assignee);
     }).switchIfEmpty(Mono.error(new AssigneeNotFoundException())).then();
   }
 
