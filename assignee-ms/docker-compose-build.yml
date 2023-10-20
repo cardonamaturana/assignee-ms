@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  assignee-ms:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: assignee-ms
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./target:/app/target
+    networks:
+      - backend-assignee
+  mongo-assignee:
+    container_name: mongo-assignee
+    image: mongo
+    ## no se mapea los puertos ya que la bd unicamente sera accesible desde el ms
+    volumes:
+      - /mongo-data-assignee-ms:/data/db
+    networks:
+      - backend-assignee
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${ASSIGNEE_MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${ASSIGNEE_MONGO_INITDB_ROOT_PASSWORD}
+networks:
+  backend-assignee:
