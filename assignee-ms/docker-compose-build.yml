@@ -2,8 +2,10 @@ version: '3'
 
 services:
   assignee-ms:
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: assignee-ms
-    image: juliocardona/asset-ms
     ports:
       - "8081:8080"
     volumes:
