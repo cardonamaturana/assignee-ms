@@ -50,18 +50,22 @@ pipeline {
 
         stage('Push to DockerHub') {
             steps {
+
+            wrap([$class: 'MaskPasswordsBuildWrapper', varPasswordPairs: [[password: env['DOCKERHUB_TOKEN'], var: 'DOCKERHUB_TOKEN']]]) {
+
                 script {
                     // Salir de cualquier sesión previa de Docker Hub
                     bat "docker logout"
 
                     // Login en Docker Hub
-                    bat 'docker login -u juliocardona --password vault path: 'secret/dockerhub', key: 'JULIOCARDONA_TOKEN', vaultUrl: 'http://127.0.0.1:8200''
+                    bat 'docker login -u juliocardona --password %DOCKERHUB_TOKEN%'
 
                     // Subir la imagen
                     bat "docker push juliocardona/assignee-ms:${env.COMMIT_HASH}"
 
                     // Opcional: Salir de Docker Hub al finalizar
                     bat "docker logout"
+                }
                 }
             }
         }
