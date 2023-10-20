@@ -55,8 +55,7 @@ pipeline {
                     bat "docker logout"
 
                     // Login en Docker Hub
-                    bat 'echo | set /p=%DOCKERHUB_TOKEN% | docker login -u juliocardona --password-stdin'
-
+                    bat 'docker login -u juliocardona --password vault path: 'secret/dockerhub', key: 'JULIOCARDONA_TOKEN', vaultUrl: 'http://127.0.0.1:8200''
 
                     // Subir la imagen
                     bat "docker push juliocardona/assignee-ms:${env.COMMIT_HASH}"
