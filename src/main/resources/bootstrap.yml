@@ -9,7 +9,7 @@ spring:
   data:
     mongodb:
       auto-index-creation : true
-      uri: mongodb://admin:root123@localhost:27017/assignee-develop?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false
+      uri: mongodb://${ASSIGNEE_MONGO_USERNAME}:${ASSIGNEE_MONGO_PASSWORD}@${ASSIGNEE_MONGO_HOST}:${ASSIGNEE_MONGO_PORT}/${ASSIGNEE_MONGO_DB}?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false
 
 springdoc:
   swagger-ui:

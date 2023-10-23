@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 services:
   assignee-ms:
@@ -12,6 +12,14 @@ services:
       - ./target:/app/target
     networks:
       - backend-assignee
+    environment:
+      ASSIGNEE_MONGO_USERNAME: ${ASSIGNEE_MONGO_USERNAME}
+      ASSIGNEE_MONGO_PASSWORD: ${ASSIGNEE_MONGO_PASSWORD}
+      ASSIGNEE_MONGO_HOST: ${ASSIGNEE_MONGO_HOST}
+      ASSIGNEE_MONGO_PORT: ${ASSIGNEE_MONGO_PORT}
+      ASSIGNEE_MONGO_DB: ${ASSIGNEE_MONGO_DB}
+      REDIS_HOST: ${REDIS_HOST}
+      REDIS_PORT: ${REDIS_PORT}
   mongo-assignee:
     container_name: mongo-assignee
     image: mongo
@@ -25,3 +33,5 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${ASSIGNEE_MONGO_INITDB_ROOT_PASSWORD}
 networks:
   backend-assignee:
+    name: backend-assignee
+    driver: bridge
