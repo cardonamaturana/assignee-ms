@@ -3,7 +3,7 @@ version: '3.7'
 services:
   assignee-ms:
     container_name: assignee-ms
-    image: juliocardona/asset-ms
+    image: juliocardona/assignee-ms
     ports:
       - "8081:8080"
     volumes:
