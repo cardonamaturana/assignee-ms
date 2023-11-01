@@ -35,3 +35,7 @@ networks:
   backend-assignee:
     name: backend-assignee
     driver: bridge
+  backend-asset:
+    external: true
+    name: backend-asset
+    driver: bridge
