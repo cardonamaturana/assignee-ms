@@ -10,6 +10,7 @@ services:
       - ./target:/app/target
     networks:
       - backend-assignee
+      - backend-asset
     restart: always
     environment:
       ASSIGNEE_MONGO_USERNAME: ${ASSIGNEE_MONGO_USERNAME}
