@@ -13,5 +13,4 @@ public class AssigneeMsApplication {
     new InsertFirstRegisters(context.getBean(CompanyController.class)).initialize();
 
   }
-
 }
